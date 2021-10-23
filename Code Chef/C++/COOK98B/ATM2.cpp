@@ -1,3 +1,4 @@
+//https://www.codechef.com/COOK98B/problems/ATM2/
 #include <iostream>
 using namespace std;
 

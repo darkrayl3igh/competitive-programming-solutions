@@ -1,3 +1,4 @@
+//https://www.codechef.com/COOK98B/problems/MAKPERM/
 #include <iostream>
 #include <algorithm>
 
