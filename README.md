@@ -7,4 +7,4 @@ Please follow the given instructions to add your code to this repository.
   - Add question link as a comment at the top of your code.
   - Documented code is appreciated but not mandatory.
 
-This repository is tagged with the 'hacktoberfest' tag so that competitive programmers may take part in this festival and show off their submissions.
+This repository is tagged with the `hacktoberfest` tag so that competitive programmers may take part in this festival and show off their submissions.
