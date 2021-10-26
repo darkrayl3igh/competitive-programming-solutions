@@ -1,54 +1,55 @@
-// http://codeforces.com/problemset/problem/1579/E1
+// https://codeforces.com/problemset/problem/1579/E1
+// GALATIANS 4:16
+
 #include <bits/stdc++.h>
-#define ll long long int
-#define F(i, a, n) for (int i = a; i < n; i++)
-#define pb push_back
-#define NL "\n"
-#define dd double
-#define __ ' '
-#define mp make_pair
-#define fi first
-#define se second
-#define tc    \
-    ll t;     \
-    cin >> t; \
-    while (t--)
-#define ull unsigned int long long
-const int INF = INT_MAX;
-#define INFL LLONG_MAX
-#define f_scan ios_base::sync_with_stdio(!cin.tie(0))
-#define all(x) x.begin(), x.end()
-#define mod 998244353
-#define debug(x) cout << #x << " " << x << endl;
-#define deci(n) fixed << setprecision(n)
+
 using namespace std;
 
-int32_t main()
-{
-    f_scan;
-    tc{
-     int n;
-     cin>>n;
-     vector<int>v(n);
-     F(i,0,n){
-         cin>>v[i];
-     }
-     deque<int>dq;
-     dq.push_back(v[0]);
-     F(i,1,n){
-         if(v[i]<dq.front()){
-             dq.push_front(v[i]);
-         }
-         else{
-             dq.push_back(v[i]);
-         }
-     }
-     while(!dq.empty()){
-         cout<<dq.front()<<__;
-         dq.pop_front();
-     }
-     cout<<NL;
+#define ll long long int
+#define debug(x) cout << #x << "=" << x << endl
+#define mp make_pair
+#define all(x) x.begin(), x.end()
+#define sortall(x) sort(all(x))
+#define PI 3.1415926535897932384626
+#define newline cout << "\n"
+#define input_stream \
+    freopen("input.txt", "r", stdin);\
+    freopen("output.txt", "w", stdout);
+
+const int MOD = 1e9+7;
+
+ll gcd (ll a, ll b) {return (a ? gcd(b % a, a) : b);}
+int random(int x, int y) {return (rand() % (y-x)) + x;}
+
+void solve() {
+    int n, num; cin >> n;
+    deque<int> tracker;
+    for(int i = 0; i < n; i++) {
+        cin >> num;
+        if(tracker.empty()) {
+            tracker.push_back(num);
+        } else if(num <= tracker.front()) {
+            tracker.push_front(num);
+        } else {
+            tracker.push_back(num);
+        }
     }
-    
+
+    while(!tracker.empty()) {
+        cout << tracker.front() << " "; tracker.pop_front();
+    } newline;
+}
+
+int main(){
+    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    #ifndef ONLINE_JUDGE
+        input_stream;
+    #endif
+
+    int t = 1; cin >> t;
+    while(t--){
+        solve();
+    }
+
     return 0;
 }
