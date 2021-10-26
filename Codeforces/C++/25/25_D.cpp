@@ -1,3 +1,4 @@
+// https://codeforces.com/problemset/problem/25/D
 #include<bits/stdc++.h>
 
 #define dbg printf("in\n");
