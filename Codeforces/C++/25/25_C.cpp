@@ -1,3 +1,4 @@
+//https://codeforces.com/problemset/problem/25/C
 #include<bits/stdc++.h>
 
 typedef long long int ll;
