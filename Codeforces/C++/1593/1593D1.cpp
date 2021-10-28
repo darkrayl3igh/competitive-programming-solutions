@@ -1,3 +1,4 @@
+//https://codeforces.com/contest/1593/problem/D1
 #include <bits/stdc++.h>
 #define ll long long int
 #define F(i, a, n) for (ll i = a; i < n; i++)
