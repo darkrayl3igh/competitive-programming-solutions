@@ -1,4 +1,3 @@
-// https://leetcode.com/discuss/interview-question/1475105/Amazon-OA
 // GALATIANS 4:16
 
 #include <bits/stdc++.h>
@@ -6,6 +5,7 @@
 using namespace std;
 
 #define ll long long int
+#define debug(x) cout << #x << "=" << x << endl
 #define mp make_pair
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
@@ -21,31 +21,26 @@ ll gcd (ll a, ll b) {return (a ? gcd(b % a, a) : b);}
 int random(int x, int y) {return (rand() % (y-x)) + x;}
 
 void solve() {
-    int n; cin >> n;
-    vector<int> wheels(n);
-    for(int i = 0; i < n; i++) {
-        cin >> wheels[i];
-    }
+    int x; cin >> x; 
+    ll or_ = 1, closest = INT_MIN;
+    for(int i = 0; i < 35; i++) {
+        if(or_ - 1 <= x) {
+            closest = or_;
+        }
+        or_ = or_ << 1;
+    } 
 
-    vector<int> answer(n);
-    for(int i = 0; i < n; i++) {
-        answer[i] = (wheels[i]%2 == 1 ? 0 : wheels[i]/4 + 1); 
-    }
-
-    for(int i = 0; i < n; i++) {
-        cout << answer[i] << " ";
-    }
-    newline;
+    cout << closest << endl;
 }
 
-int main() {
+int main(){
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
     #ifndef ONLINE_JUDGE
         input_stream;
     #endif
 
-    int t = 1; //cin >> t;
-    while(t--) {
+    int t = 1; cin >> t;
+    while(t--){
         solve();
     }
 
